@@ -3,8 +3,9 @@ const router = express.Router();
 const {Products} = require("../models");
 
 
-router.get("/", (req, res) => {
-    res.json("Hello, everything is working well!");
+router.get("/", async (req, res) => {
+    const listOfProducts = await Products.findAll();
+    res.json(listOfProducts);
 });
 
 router.post("/", async (req, res) => {
