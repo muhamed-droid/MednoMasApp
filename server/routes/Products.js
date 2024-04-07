@@ -4,7 +4,7 @@ const {Products} = require("../models");
 
 
 router.get("/", (req, res) => {
-    res.json("Hello World");
+    res.json("Hello, everything is working well!");
 });
 
 router.post("/", async (req, res) => {
