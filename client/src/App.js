@@ -1,26 +1,17 @@
 
 import './App.css';
-import axios from "axios";
-import { useEffect, useState } from 'react';
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import Home from './pages/Home';
 
 function App() {
 
-  const [listOfProducts, setListOfProducts] = useState([]);
-
-
-  useEffect(() => {
-    axios.get("http://localhost:3001/products").then((response)=> {
-      setListOfProducts(response.data);
-    });
-  }, [])
   return (
     <div className="App">
-     {listOfProducts.map( (value,key) => {return <div className="products"> 
-        <div className="name"> {value.name} </div> 
-        <div className="body"> {value.description} </div> 
-        <div className="price"> {value.price} </div>
-        <div className="photo"> {value.photo} </div>
-      </div>})}
+      <Router> 
+          <Switch>
+            <Route path="/" exact component={Home}/>
+          </Switch>
+      </Router>
     </div>
   );
 }
