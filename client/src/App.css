@@ -28,7 +28,7 @@
 }
 
 .photo img {
-  width: 100%; /* Adjust image width as needed */
-  height: auto; /* Maintain aspect ratio */
+  width: 100%; 
+  height: auto; 
   margin-bottom: 10px;
 }
