@@ -1,6 +1,7 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage} from "formik";
 import './CreateProduct.css';
+import axios from "axios";
 import * as Yup from 'yup';
 
 function CreateProduct() {
@@ -18,7 +19,8 @@ function CreateProduct() {
     });
 
     const onSubmit = (data) => {
-        console.log(data);
+        axios.post("http://localhost:3001/products", data).then((response)=> {
+        console.log("It worked");    });
     };
 
   return (
