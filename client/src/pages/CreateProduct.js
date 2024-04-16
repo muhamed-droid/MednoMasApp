@@ -20,7 +20,7 @@ function CreateProduct() {
 
     const onSubmit = (data) => {
         axios.post("http://localhost:3001/products", data).then((response)=> {
-        console.log("It worked");    });
+        console.log("It worked");});
     };
 
   return (
