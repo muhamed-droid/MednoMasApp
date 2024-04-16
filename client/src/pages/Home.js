@@ -11,7 +11,7 @@ function Home() {
     axios.get("http://localhost:3001/products").then((response)=> {
       setListOfProducts(response.data);
     });
-  }, [])
+  }, []);
 
   return (
     <div>

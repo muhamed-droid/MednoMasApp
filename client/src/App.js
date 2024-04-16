@@ -1,6 +1,6 @@
 
 import './App.css';
-import {BrowserRouter as Router, Route, Routes, Link} from "react-router-dom";
+import {BrowserRouter, Route, Routes, Link} from "react-router-dom";
 import Home from './pages/Home';
 import CreateProduct from './pages/CreateProduct';
 
@@ -8,13 +8,13 @@ function App() {
 
   return (
     <div className="App">
-      <Router> 
+      <BrowserRouter> 
         <Link to="/createproduct"> Create a Product</Link>
           <Routes>
-            <Route path="/" exact component={Home}/>
-            <Route path="/createproduct" exact component={CreateProduct}/>
+            <Route path="/" element={<Home/>}/>
+            <Route path="/createproduct" element={CreateProduct}/>
           </Routes>
-      </Router>
+      </BrowserRouter>
     </div>
   );
 }
