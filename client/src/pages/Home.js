@@ -20,11 +20,12 @@ function Home() {
   return (
     <div>
       {listOfProducts.map( (value,key) => {
+        const imageUrl = `data:image/png;base64,${value.photo}`;
         return <div className="products" onClick={handleClick}> 
         <div className="name"> {value.name} </div> 
         <div className="body"> {value.description} </div> 
         <div className="price"> {value.price} </div>
-        <div className="photo"> {value.photo} </div>
+        <div className="photo"> <img src={imageUrl} alt="ProductImage"/> </div>
       </div>})}
     </div>
   )
